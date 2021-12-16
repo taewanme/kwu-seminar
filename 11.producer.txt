@@ -1,0 +1,7 @@
+from kafka import KafkaProducer
+
+boots_str=‘localhost:9092,localhost:9093,localhost:9094’
+
+producer = KafkaProducer( bootstrap_servers=boots_str )
+ 
+producer.send(‘demo01’, str.encode(‘kafka practice – producer’))
