@@ -15,6 +15,7 @@ rm -rf /home/opc/*.tar
 rm -rf /home/opc/log
 rm -rf /home/opc/notebook.log
 rm -rf /home/opc/*.ipynb
+sudo rm -rf /tmp/zookeeper
 
 
 wget https://dlcdn.apache.org/kafka/3.0.0/kafka_2.12-3.0.0.tgz
