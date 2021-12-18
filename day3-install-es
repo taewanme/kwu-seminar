@@ -1,0 +1,20 @@
+## download repository file
+wget https://raw.githubusercontent.com/taewanme/kwu-seminar/main/day3-yum-repo
+
+## config repository file
+sudo ls -al /etc/yum.repos.d/elasticsearch.repo 
+
+## impot key
+rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+
+sudo firewall-cmd --zone=public --add-port=5601/tcp --permanent
+sudo firewall-cmd --reload
+
+## install elasticsearch
+sudo yum install -y elasticsearch
+sudo yum install -y kibana
+sudo yum install -y logstash
+
+## starting ealsticsearch
+sudo systemctl start elasticsearch
+sudo systemctl start kibana
