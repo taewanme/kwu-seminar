@@ -6,7 +6,7 @@ sudo mv ./day3-yum-repo /etc/yum.repos.d/elasticsearch.repo
 sudo ls -al /etc/yum.repos.d/elasticsearch.repo 
 
 ## impot key
-rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+sudo rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
 
 sudo firewall-cmd --zone=public --add-port=5601/tcp --permanent
 sudo firewall-cmd --reload
