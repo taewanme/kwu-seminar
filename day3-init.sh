@@ -36,6 +36,12 @@ mv ./server1.properties ./kafka/config/
 mv ./server2.properties ./kafka/config/
 
 ###################################
+## Installing Python Package 
+###################################
+pip3 install --user kafka-python 
+pip3 install --user bs4
+
+###################################
 ## Starting processes(Zookeeper & Kafka Broker)
 ###################################
 nohup ./kafka/bin/zookeeper-server-start.sh ./kafka/config/zookeeper.properties > zookeeper.log &
