@@ -20,4 +20,4 @@ sudo systemctl start elasticsearch
 sudo systemctl start kibana
 sudo systemctl start logstash
 
-echo "export PATH=$PATH://usr/share/logstash/bin" >> .bash_profile
+echo "export PATH=$PATH:/usr/share/logstash/bin" >> .bash_profile
