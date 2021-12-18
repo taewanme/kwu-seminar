@@ -22,6 +22,6 @@ sudo systemctl start kibana
 
 echo "export PATH=$PATH:/usr/share/logstash/bin" >> .bash_profile
 
-sudo mkdir /usr/share/logstash/data
+sudo mkdir -p /usr/share/logstash/data
 sudo chmod 777 /usr/share/logstash/data
 
