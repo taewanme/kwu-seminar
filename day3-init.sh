@@ -22,6 +22,7 @@ sudo rm -rf /tmp/zookeeper
 ###################################
 ## Installing Kafka Env for Hands-on-lab of 3 day
 ###################################
+yum install java-11-openjdk-devel.x86_64
 wget https://dlcdn.apache.org/kafka/3.0.0/kafka_2.12-3.0.0.tgz
 tar -xf ./kafka_2.12-3.0.0.tgz
 ln -s ./kafka_2.12-3.0.0 ./kafka
