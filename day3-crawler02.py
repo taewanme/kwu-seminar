@@ -51,5 +51,5 @@ for i in range(603001, 603056):
     data["channel"] = channel
     data["contents"] = contents
     
-    producer.send('crawlingtopic', str.encode(data))
+    producer.send('crawlingtopic', str.encode(json.dumps(data)))
     time.sleep(1)
