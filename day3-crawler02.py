@@ -2,7 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import json
+from kafka import KafkaProducer
 
+boots_str='localhost:9092,localhost:9093,localhost:9094'
+producer = KafkaProducer( bootstrap_servers=boots_str )
 
 for i in range(603001, 603056):
     req = requests.get('https://www1.president.go.kr/petitions/'+str(i))
@@ -39,7 +42,14 @@ for i in range(603001, 603056):
     
     contents = contents.replace(c, '"')
 
-    json_val = f'{{"title":"{title}", "agree_count":{agree_count}, "category": "{category}", "opendate": "{opendate}", "closedate": "{closedate}", "channel": "{channel}", "contents": "{contents}"}}'
-
-    producer.send('crawlingtopic', str.encode(json_val))
+    data = {}
+    data["title"] = title
+    data["agree_count"] = agree_count
+    data["category"] = category
+    data["opendate"] = opendate
+    data["closedate"] = closedate
+    data["channel"] = channel
+    data["contents"] = contents
+    
+    producer.send('crawlingtopic', str.encode(data))
     time.sleep(1)
