@@ -1,0 +1,12 @@
+input {
+    kafka {
+            bootstrap_servers => "localhost:9092,localhost:9093,localhost:9094"
+            topics => "crawlingtopic"
+    }
+}
+ 
+## Add your filters / logstash plugins configuration here
+ 
+output {
+    stdout {}
+}
