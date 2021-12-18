@@ -2,6 +2,7 @@
 wget https://raw.githubusercontent.com/taewanme/kwu-seminar/main/day3-yum-repo
 
 ## config repository file
+sudo mv ./day3-yum-repo /etc/yum.repos.d/elasticsearch.repo 
 sudo ls -al /etc/yum.repos.d/elasticsearch.repo 
 
 ## impot key
