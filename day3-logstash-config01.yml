@@ -1,0 +1,17 @@
+input {
+    kafka {
+            bootstrap_servers => "localhost:9092,localhost:9093,localhost:9094"
+            topics => "crawlingtopic"
+            auto_offset_reset => "earliest"
+    }
+}
+
+filter {
+ ruby {
+    code => "event.set('ingested_time' , Time.now.utc)"
+ }
+}
+ 
+output {
+    stdout {}
+}
